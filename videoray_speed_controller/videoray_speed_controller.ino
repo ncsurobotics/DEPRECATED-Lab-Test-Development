@@ -1,6 +1,6 @@
 int led = 5;
-int potPin = A2;
-int val = 0; 
+int potPin = 2;
+float val = 0; 
 
 uint16_t loop_time = 32768; // about 51Hz
 uint16_t on_time = 1050;
@@ -27,14 +27,19 @@ void loop() {
     digitalWrite(led, LOW);
     delayMicroseconds(off_time);
     i++;
-    val = analogRead(potPin);
-    val = map(val, 0, 1023, 0,180);
-    delay(1);
   }
   
-  on_time = 1350;
-  off_time = loop_time-on_time;
+
+  
   while(1) {
+    
+    // Read user input
+    val = analogRead(potPin);
+    
+    // Adjust pulse time accordingly
+    on_time = 1100 + map(val, 0, 1023, 0,800);
+    off_time = loop_time - on_time;
+    
    // start of loop. set output high
     digitalWrite(led, HIGH);
     delayMicroseconds(on_time);
