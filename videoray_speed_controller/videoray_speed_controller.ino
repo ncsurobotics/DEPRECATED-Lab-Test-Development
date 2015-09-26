@@ -37,7 +37,7 @@ void loop() {
     val = analogRead(potPin);
     
     // Adjust pulse time accordingly
-    on_time = 1100 + map(val, 0, 1023, 0,800);
+    on_time = map(val, 0, 1023, 1050,1900);
     off_time = loop_time - on_time;
     
    // start of loop. set output high
