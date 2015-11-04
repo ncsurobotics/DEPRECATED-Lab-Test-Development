@@ -255,7 +255,7 @@
 .equ	TIMING_MIN	= 0x8000 ; 8192us per commutation
 .equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
 .equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
-.equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
+.equ	TIMING_RANGE3	= 0x2000 ; 2x1024us per commutation (modified to accomodate slower RPM in water)
 .equ	TIMING_MAX	= 0x0080 ; 32us per commutation (312,500eRPM)
 
 .equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
